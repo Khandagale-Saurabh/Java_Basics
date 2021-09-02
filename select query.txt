@@ -1,0 +1,74 @@
+jdbc has 2 quer:(Use static bloc for initialize the variacle )
+1.select(select) : store in resultset grop of record
+
+2. non-select(insert,delete,update):return now of row
+
+statement(Interface) hai
+Statement st=con.createStatement();
+ method:
+1.executeQuery():=select queries(select * from abc)=>grp of record>>resultset is return type
+eg: ResultSet rs=st.executeQuery("select * from abc");
+
+2.executeUpdate():=non-select query(DML-insert,delete,update)
+eg:= int x=st.execute(delete from emp where id>10);
+
+
+3.execute():=both select and non-select operation//whwen don't know at run time  select or non-select query 
+
+*********return type of execute() is boolean*************
+if true then it is select quertu which return in Result set
+else
+if false then non-select query which return int value
+
+eg:
+boolean b=st.executr("dynamic query");
+if(b==true)//select query
+{
+  ResultSet rs=st.getResultSet();
+}
+else//non-select query
+{
+ int x=st.getUpdateCount(); 
+}
+
+*************************************************
+
+select====>st.excuteQuer();// Resusletset=========>getResultset();
+non-select=====>st.executeUpdate()//int   ====>getUpdateCount()
+st.execute()// true,false
+
+
+
+===================================
+SQL> select to_char(emp_dob,'yyyy') ,count(*) as year from emp group by to_char(emp_dob,'yyyy');
+
+join ->display data from both table [select emp_code,dep_code...]
+subquery->only data from one table but conditon based on another table
+corelated->outter condition will execute first then inner will execute
+{[coreleted]
+SELECT employee_number, name
+       FROM employees emp
+       WHERE salary > (
+         SELECT AVG(salary)
+           FROM employees
+           WHERE department = emp.department);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

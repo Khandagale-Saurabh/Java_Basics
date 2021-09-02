@@ -1,0 +1,171 @@
+Static:=we don;t need any object to call main method()
+
+
+polymerphism:
+
+
+   ArrayList a1=new ArrayList();
+   a1.add("Saurabh");
+   a1.add(10);
+
+    LinkedList a11=new LinkedList();
+         a11.add("rabh");
+      a11.add(20);
+
+
+List l1=a1;
+l1.add("khandagale");
+
+
+
+
+  System.out.println("ArrayList"+l1);
+  l1=a11;
+  System.out.println("LinkedList"+l1);
+
+
+
+overloading[mehtod hidding] :when static method is theri then we load the method classA{static m1()}-> classB{static m1()}==>over loaded bec static
+output:=based on refence type
+P p=new child;//parent 
+
+overriding:parent child parent
+
+
+
+========================
+class Demo
+{
+  static {
+    //common to all
+1.Atm while selecting launguage
+ 
+    }//more than one you can write  and fowllo top to bottom
+
+static {2}
+p stc void main(){
+//last because it is method
+}
+
+}
+
+
+//if you want yo use non static v=10; then Sysm.out.print(obj.varname)
+
+
+
+
+
+
+import java.util.*;
+/*class Sai{
+static String name="Saurabh";
+static Scanner sc;
+static int roll;
+static {
+       sc=new Scanner(System.in);
+       name=sc.nextLine();
+       }
+static {
+         roll=sc.nextInt();
+       }
+    int ff=20;
+  public static void main(String aa[])
+  {
+   Sai s=new Sai();
+     System.out.println(name);
+ System.out.println(s.ff);
+
+     System.out.println(roll);
+  }
+
+
+
+}
+
+*/
+class Sai
+{
+ //copy constructor will use when you want update data, compulsory to write one Sai(){} constutor to work and call time object pass
+   int a=10;
+   int b=20;
+   Sai()
+   {}
+  Sai(Sai ref)
+  {
+     this.a=ref.a;
+     this.b=ref.b;
+   }
+    public static void main(String aa[])
+  {
+      Sai obj1=new Sai();
+      System.out.println(obj1.a);
+      System.out.println(obj1.b);
+      obj1.a=100;//upadte a, b but not reflect on oraginnal value so we crete copy
+      obj1.b=200;
+            System.out.println(obj1.a);
+      System.out.println(obj1.b);100,200
+      Sai obj2=new Sai(obj1);
+
+      System.out.println(obj2.a +"  "+obj2.b+"  ");//100,200
+//without copy we get 10,20 not updatate value
+  }
+ }
+**************************************************************
+
+block vs method()
+1.no name| have it own identity
+2.invoke in first stroke| invoke when we call
+
+*********************************************
+inner class[$ when inner class is cretered]
+
+without existing of one type of object if there is no chance of exisit another type of object
+
+eg: college close then all department will also deleted
+
+class RCOEM
+{
+  class cse
+  {
+//Annonomus
+  }
+}
+
+type of inner class
+1.Normal  : without static keyword
+2.Method local inner clasess
+3. Anonomys inner class
+4.static nested clasess
+
+
+
+====>
+1. Normal
+class outter
+{
+   class inner
+  {
+  //  both class file will give nosuch mehod exception 
+  }
+}
+
+case :2
+
+class outter
+{
+   class inner
+  {
+ 
+  }
+   public stataic void main()
+   { 
+
+      print("Inside out");
+   } 
+ }
+when we compile  and run outter.java output is inndie out
+but when compile inner.java we get error
+
+case 3:
+ inncer class not have ststic declaration like main method inside inner class
